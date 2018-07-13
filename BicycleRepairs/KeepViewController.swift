@@ -7,16 +7,29 @@
 //
 
 import UIKit
-//
+// 保养界面
 class KeepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.orange
+        view.backgroundColor = UIColor.white
        
         let title = "周杰伦"
         let imagee = #imageLiteral(resourceName: "骑友圈45x45")
-        addCoreData(title: title, image: imagee)
+        addCoreData(title: title, image: imagee) // 增
+        printAllDataWithCoreData()
+        
+        let array = selectDataFromCoreData()
+        let item = array[0] as! Fixser
+        let image = UIImage(data: item.imageA as! Data)
+        let imageview = UIImageView(frame: CGRect(x: 100, y: 200, width: 40, height: 40))
+        imageview.image = image
+        view.addSubview(imageview)
+        
+        
+        let libraryPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+        print("沙盒地址：\(libraryPath)")
+        
         
     }
 
