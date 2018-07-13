@@ -17,7 +17,7 @@ let EntityName = "Fixser"
 // 增
 func addCoreData(title:String, image:UIImage) {
     let entity = NSEntityDescription.insertNewObject(forEntityName: EntityName, into: appDelegate.managedObjectContext) as! Fixser
-    entity.titleA = "周杰伦"
+    entity.titleA = title
     entity.imageA = UIImagePNGRepresentation(image) as NSData?
     do
     {

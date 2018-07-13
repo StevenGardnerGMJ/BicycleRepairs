@@ -7,13 +7,17 @@
 //
 
 import UIKit
-// 
+//
 class KeepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange
-        // Do any additional setup after loading the view.
+       
+        let title = "周杰伦"
+        let imagee = #imageLiteral(resourceName: "骑友圈45x45")
+        addCoreData(title: title, image: imagee)
+        
     }
 
     override func didReceiveMemoryWarning() {
